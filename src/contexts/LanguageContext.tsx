@@ -10,10 +10,16 @@ const translations = {
         home: { title: 'Portfólio de Projetos', subtitle: 'Uma seleção de soluções técnicas e arquiteturas de software focadas em resolver problemas reais de negócios.', search: 'Buscar por palavras-chave...', all: 'Todos', notFound: 'Nenhum projeto encontrado para estes filtros.' },
         about: {
             title: 'Sobre mim',
-            p1: 'Sou um desenvolvedor de 20 anos, Reidente no Rio Grande do Sul, com foco na criação de sistemas web e arquiteturas back-end sólidas. Atualmente, curso Sistemas para Internet no IFSul, ambiente onde aprofundo meus conhecimentos teóricos e práticos para a construção de aplicações escaláveis e eficientes.',
-            p2: 'Minha trajetória técnica inclui uma experiência valiosa atuando como estagiário de back-end em um programa de bolsas corporativo de uma grande empresa de tecnologia. Nesse período, trabalhei diretamente com JavaScript e metodologias ágeis, como o Scrum, imergindo em conceitos de Open Finance, Blockchain e infraestrutura em nuvem na AWS. Essa vivência me ensinou a importância de alinhar código limpo com as necessidades e prazos do mundo dos negócios.',
-            p3: 'Fora do código estritamente comercial e do ambiente acadêmico, sou um grande entusiasta da cultura geek, de animes e de sistemas de RPG. Essa paixão naturalmente se estende ao desenvolvimento de jogos, uma área onde exploro a criação de lógicas complexas, como mecânicas por turnos e gerenciamento de estados, unindo minha criatividade com a resolução de problemas de programação.',
-            p4: 'Seja estruturando uma API robusta, gerenciando bancos de dados ou pensando na arquitetura de um novo sistema, meu objetivo é sempre entregar soluções que sejam tecnicamente impressionantes e de fácil manutenção.'
+            intro: 'Sou um desenvolvedor de 20 anos, com foco na criação de sistemas web e arquiteturas back-end.',
+            trajectoryTitle: 'Trajetória e Impacto',
+            trajectoryText: 'Atualmente curso Sistemas para Internet no IFSul, ambiente onde consolido a base teórica para aplicações escaláveis. Minha experiência prática inclui a atuação como estagiário de back-end em uma grande empresa de tecnologia. Durante esse período, utilizei JavaScript e metodologias ágeis (Scrum) para imergir em conceitos de Open Finance, Blockchain e infraestrutura AWS. Essa vivência moldou minha visão sobre como alinhar código limpo com as necessidades e prazos de negócios reais.',
+            impactTitle: 'Impacto nos Projetos',
+            impactText: 'Meu foco sempre foi a resolução de gargalos. No desenvolvimento de sistemas de gestão, implementei fluxos que substituem processos manuais por plataformas completas de registro e edição de relatórios. Na criação de APIs, priorizo a segurança e a performance estrutural, garantindo que o back-end suporte a lógica de negócios sem falhas de integração.',
+            statsTitle: 'Estatísticas de Desenvolvimento',
+            statsCommits: 'Commits no último ano',
+            statsProjects: 'Repositórios Públicos',
+            personalTitle: 'Além do Código corporativo',
+            personalText: 'Fora do ambiente acadêmico e das entregas comerciais, sou um entusiasta Desenvolvedor de jogos, me desafio com jogos envolvendo lógica de programação e sistemas de RPG. Essa paixão atua como um laboratório de lógica, estendendo-se ao desenvolvimento de jogos independentes, onde exploro a criação de mecânicas complexas, sistemas de turnos e gerenciamento de estados.'
         },
         contact: { title: 'Contato', subtitle: 'Sinta-se à vontade para entrar em contato para discutir oportunidades de negócios, arquitetura de sistemas ou novos projetos.', emailLabel: 'E-mail', socialLabel: 'Redes Profissionais' }
     },
@@ -22,10 +28,16 @@ const translations = {
         home: { title: 'Project Portfolio', subtitle: 'A selection of technical solutions and software architectures focused on solving real business problems.', search: 'Search for keywords...', all: 'All', notFound: 'No projects found for these filters.' },
         about: {
             title: 'About me',
-            p1: 'I am a 20-year-old developer based, Living at Rio Grande do Sul, Brazil, focusing on creating web systems and solid back-end architectures. I am currently studying Internet Systems at IFSul, an environment where I deepen my theoretical and practical knowledge to build scalable and efficient applications.',
-            p2: 'My technical background includes valuable experience working as a back-end intern in a corporate scholarship program at a major technology company. During this time, I worked directly with JavaScript and agile methodologies, such as Scrum, immersing myself in concepts of Open Finance, Blockchain, and AWS cloud infrastructure. This experience taught me the importance of aligning clean code with business needs and deadlines.',
-            p3: 'Outside of strictly commercial code and the academic environment, I am a huge enthusiast of geek culture, anime, and RPG systems. This passion naturally extends to game development, an area where I explore creating complex logic, such as turn-based mechanics and state management, combining my creativity with programming problem-solving.',
-            p4: 'Whether structuring a robust API, managing databases, or thinking about the architecture of a new system, my goal is always to deliver solutions that are technically impressive and easy to maintain.'
+            intro: 'I am a 20-year-old developer, based in Brazil, focusing on creating web systems and back-end architectures.',
+            trajectoryTitle: 'Trajectory and Impact',
+            trajectoryText: 'I am currently studying Internet Systems at IFSul, an environment where I consolidate the theoretical foundation for scalable applications. My practical experience includes working as a back-end intern at a major technology company. During this time, I used JavaScript and agile methodologies (Scrum) to immerse myself in concepts of Open Finance, Blockchain, and AWS infrastructure. This experience shaped my vision on how to align clean code with real business needs and deadlines.',
+            impactTitle: 'Projects Impact',
+            impactText: 'My focus has always been on resolving bottlenecks. In the development of management systems, I implemented flows that replace manual processes with complete platforms for registering and editing reports. In API creation, I prioritize security and structural performance, ensuring the back-end supports business logic without integration failures.',
+            statsTitle: 'Development Statistics',
+            statsCommits: 'Commits in the last year',
+            statsProjects: 'Public Repositories',
+            personalTitle: 'Beyond Corporate Code',
+            personalText: 'Outside the academic environment and commercial deliveries, I am an enthusiast of game development, chalenge myself with code challenges and RPG systems. This passion acts as a logic laboratory, extending to independent game development, where I explore the creation of complex mechanics, turn-based systems, and state management.'
         },
         contact: { title: 'Contact', subtitle: 'Feel free to reach out to discuss business opportunities, system architecture, or new projects.', emailLabel: 'E-mail', socialLabel: 'Professional Networks' }
     }
