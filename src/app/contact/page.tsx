@@ -8,7 +8,7 @@ export default function Contato() {
     const { t } = useLanguage();
 
     return (
-        <main className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 py-16 px-6 lg:px-24 font-sans overflow-hidden transition-colors duration-300">
+        <main className="min-h-screen bg-blue-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 py-16 px-6 lg:px-24 font-sans overflow-hidden transition-colors duration-300">
             <div className="max-w-2xl mx-auto">
 
                 <Typewriter

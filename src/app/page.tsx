@@ -64,7 +64,7 @@ export default function Showcase() {
   });
 
   return (
-    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 py-12 px-6 lg:px-24 font-sans transition-colors duration-300">
+    <main className="min-h-screen bg-blue-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 py-12 px-6 lg:px-24 font-sans transition-colors duration-300">
       <header className="mb-16 max-w-4xl">
         <h1 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white mb-4 transition-colors">{t.home.title}</h1>
         <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed transition-colors">
