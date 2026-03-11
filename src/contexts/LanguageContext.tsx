@@ -21,7 +21,12 @@ const translations = {
             personalTitle: 'Além do Código corporativo',
             personalText: 'Fora do ambiente acadêmico e das entregas comerciais, sou um entusiasta Desenvolvedor de jogos, me desafio com jogos envolvendo lógica de programação e sistemas de RPG. Essa paixão atua como um laboratório de lógica, estendendo-se ao desenvolvimento de jogos independentes, onde exploro a criação de mecânicas complexas, sistemas de turnos e gerenciamento de estados.'
         },
-        contact: { title: 'Contato', subtitle: 'Sinta-se à vontade para entrar em contato para discutir oportunidades de negócios, arquitetura de sistemas ou novos projetos.', emailLabel: 'E-mail', socialLabel: 'Redes Profissionais' }
+        contact: { title: 'Contato', subtitle: 'Sinta-se à vontade para entrar em contato para discutir oportunidades de negócios, arquitetura de sistemas ou novos projetos.', emailLabel: 'E-mail', socialLabel: 'Redes Profissionais' },
+        footer: {
+            tech: 'Tecnologias utilizadas neste site',
+            social: 'Redes Profissionais',
+            rights: 'Todos os direitos reservados.'
+        }
     },
     en: {
         nav: { portfolio: 'PORTFOLIO', projects: 'Projects', about: 'About me', contact: 'Contact' },
@@ -39,7 +44,12 @@ const translations = {
             personalTitle: 'Beyond Corporate Code',
             personalText: 'Outside the academic environment and commercial deliveries, I am an enthusiast of game development, chalenge myself with code challenges and RPG systems. This passion acts as a logic laboratory, extending to independent game development, where I explore the creation of complex mechanics, turn-based systems, and state management.'
         },
-        contact: { title: 'Contact', subtitle: 'Feel free to reach out to discuss business opportunities, system architecture, or new projects.', emailLabel: 'E-mail', socialLabel: 'Professional Networks' }
+        contact: { title: 'Contact', subtitle: 'Feel free to reach out to discuss business opportunities, system architecture, or new projects.', emailLabel: 'E-mail', socialLabel: 'Professional Networks' },
+        footer: {
+            tech: 'Technologies used in this site',
+            social: 'Professional Networks',
+            rights: 'All rights reserved.'
+        }
     }
 };
 

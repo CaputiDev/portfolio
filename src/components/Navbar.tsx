@@ -52,9 +52,18 @@ export default function Navbar() {
 
                         <button
                             onClick={toggleLanguage}
-                            className="px-4 py-2 text-sm font-bold rounded-md bg-slate-800 border border-slate-600 hover:bg-slate-700 transition-colors"
+                            title={language === 'pt' ? 'Change to English' : 'Mudar para Português'}
+                            aria-label="Alternar idioma"
+                            className="p-2 rounded-md bg-slate-800 border border-slate-600 hover:bg-slate-700 transition-colors flex items-center justify-center hover:scale-105 duration-200"
                         >
-                            {language === 'pt' ? 'EN' : 'PT'}
+                            <div className="relative w-6 h-4 overflow-hidden rounded-sm">
+                                <Image
+                                    src={language === 'pt' ? '/images/us-flag.svg' : '/images/br-flag.svg'}
+                                    alt={language === 'pt' ? 'English Flag' : 'Bandeira do Brasil'}
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
                         </button>
                     </div>
 
@@ -82,10 +91,10 @@ export default function Navbar() {
                         <Link href="/" onClick={toggleMenu} className="block px-3 py-3 rounded-md text-lg font-medium text-slate-300 hover:text-white hover:bg-slate-700">
                             {t.nav.projects}
                         </Link>
-                        <Link href="/sobre" onClick={toggleMenu} className="block px-3 py-3 rounded-md text-lg font-medium text-slate-300 hover:text-white hover:bg-slate-700">
+                        <Link href="/about" onClick={toggleMenu} className="block px-3 py-3 rounded-md text-lg font-medium text-slate-300 hover:text-white hover:bg-slate-700">
                             {t.nav.about}
                         </Link>
-                        <Link href="/contato" onClick={toggleMenu} className="block px-3 py-3 rounded-md text-lg font-medium text-slate-300 hover:text-white hover:bg-slate-700">
+                        <Link href="/contact" onClick={toggleMenu} className="block px-3 py-3 rounded-md text-lg font-medium text-slate-300 hover:text-white hover:bg-slate-700">
                             {t.nav.contact}
                         </Link>
                         <button
@@ -93,9 +102,19 @@ export default function Navbar() {
                                 toggleLanguage();
                                 toggleMenu();
                             }}
-                            className="mt-4 w-full text-left px-3 py-3 rounded-md text-lg font-bold text-slate-300 hover:text-white hover:bg-slate-700"
+                            className="mt-4 w-full flex items-center gap-4 px-3 py-3 rounded-md text-lg font-bold text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
                         >
-                            {language === 'pt' ? 'Mudar para Inglês (EN)' : 'Change to Portuguese (PT)'}
+                            <div className="relative w-6 h-4 overflow-hidden rounded-sm flex-shrink-0">
+                                <Image
+                                    src={language === 'pt' ? '/images/us-flag.svg' : '/images/br-flag.svg'}
+                                    alt={language === 'pt' ? 'English Flag' : 'Bandeira do Brasil'}
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                            <span>
+                                {language === 'pt' ? '' : ''}
+                            </span>
                         </button>
                     </div>
                 </div>
