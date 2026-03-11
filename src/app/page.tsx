@@ -1,65 +1,88 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import { useState, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { projects } from '../data/projects';
+import ProjectCard from '../components/ProjectCard';
+import { useLanguage } from '../contexts/LanguageContext';
+
+export default function Showcase() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const { language, t } = useLanguage();
+
+  const initialSearch = searchParams.get('search') || '';
+  const initialTag = searchParams.get('tag') || '';
+
+  const [searchTerm, setSearchTerm] = useState(initialSearch);
+  const [selectedTag, setSelectedTag] = useState(initialTag);
+
+  const allTags = Array.from(new Set(projects.flatMap(p => p.tags)));
+
+  useEffect(() => {
+    const params = new URLSearchParams();
+    if (searchTerm) params.set('search', searchTerm);
+    if (selectedTag) params.set('tag', selectedTag);
+
+    router.push(`/?${params.toString()}`, { scroll: false });
+  }, [searchTerm, selectedTag, router]);
+
+  const filteredProjects = projects.filter(project => {
+    const currentTranslation = project[language];
+    const matchesSearch = currentTranslation.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      currentTranslation.description.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesTag = selectedTag ? project.tags.includes(selectedTag) : true;
+    return matchesSearch && matchesTag;
+  });
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main className="min-h-screen bg-slate-50 text-slate-900 py-12 px-6 lg:px-24 font-sans">
+      <header className="mb-16 max-w-4xl">
+        <h1 className="text-4xl font-bold tracking-tight text-slate-900 mb-4">{t.home.title}</h1>
+        <p className="text-lg text-slate-600 leading-relaxed">
+          {t.home.subtitle}
+        </p>
+      </header>
+
+      <section className="mb-12 flex flex-col md:flex-row gap-6">
+        <input
+          type="text"
+          placeholder={t.home.search}
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="w-full md:w-1/3 px-4 py-3 border border-slate-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        <div className="flex flex-wrap gap-2 items-center">
+          <button
+            onClick={() => setSelectedTag('')}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${selectedTag === '' ? 'bg-slate-900 text-white' : 'bg-slate-200 text-slate-700 hover:bg-slate-300'}`}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            {t.home.all}
+          </button>
+          {allTags.map(tag => (
+            <button
+              key={tag}
+              onClick={() => setSelectedTag(tag)}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${selectedTag === tag ? 'bg-blue-600 text-white' : 'bg-white border border-slate-300 text-slate-700 hover:bg-slate-50'}`}
+            >
+              {tag}
+            </button>
+          ))}
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {filteredProjects.map(project => (
+          <ProjectCard key={project.id} project={project} language={language} />
+        ))}
+      </section>
+
+      {filteredProjects.length === 0 && (
+        <div className="text-center py-20 text-slate-500">
+          {t.home.notFound}
+        </div>
+      )}
+    </main>
   );
 }
