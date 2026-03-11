@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+[![Read in English](https://img.shields.io/badge/Language-Read_in_English-blue)](README.en.md)
 
-## Getting Started
+# Portfólio Corporativo e Showcase de Projetos
 
-First, run the development server:
+Este projeto é um portfólio voltado para o ambiente de negócios, projetado para apresentar soluções técnicas, arquiteturas de sistemas e lógicas de desenvolvimento de forma limpa e objetiva. A estrutura foi pensada para facilitar a manutenção e a escalabilidade, permitindo a adição de novos projetos e conteúdos sem a necessidade de criar novas páginas ou alterar o fluxo de roteamento.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Funcionalidades Principais
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A aplicação possui um sistema de showcase dinâmico. Todos os projetos exibidos, desde sistemas de gestão e APIs RESTful até mecânicas complexas de jogos por turnos, são renderizados a partir de uma fonte de dados centralizada. Esse modelo simula o comportamento de um banco de dados e agiliza a atualização do site de forma constante.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para facilitar a navegação de recrutadores e profissionais da área, a página principal conta com uma barra de pesquisa textual e filtros por tecnologias. Esses parâmetros de filtro refletem automaticamente na URL do navegador. Dessa forma, é possível copiar o link de uma busca específica e compartilhar diretamente com terceiros, mantendo o contexto exato da pesquisa.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+O site também é integralmente bilíngue. Utilizando a Context API, a troca entre português e inglês ocorre de forma instantânea em toda a interface e na base de dados dos projetos, sem recarregamento de página. O design construído é totalmente responsivo, adaptando a estrutura de navegação em cascata e a exibição dos cartões de projeto perfeitamente para a tela de dispositivos móveis.
 
-## Learn More
+## Arquitetura e Tecnologias
 
-To learn more about Next.js, take a look at the following resources:
+O projeto foi construído sobre o ecossistema do Next.js, utilizando o padrão App Router para o gerenciamento eficiente e nativo das rotas. O TypeScript foi adotado em toda a base de código para garantir tipagem estática, reduzindo falhas de execução e documentando as estruturas de dados e contratos de interfaces de forma clara.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+A interface de usuário foi desenhada com Tailwind CSS. Essa escolha permitiu a criação de um visual sério e de alto contraste, adequado para o contexto corporativo, mantendo o código limpo e livre de arquivos de estilização externos complexos. A separação de responsabilidades foi rigorosamente mantida, isolando os componentes visuais, as regras de contexto de idioma e as fontes de dados estáticas.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Estrutura de Diretórios
 
-## Deploy on Vercel
+A organização do código segue as melhores práticas para aplicações Next.js modernas. Toda a lógica de desenvolvimento está concentrada dentro do diretório src. As rotas e layouts globais residem na pasta app. Os blocos visuais interativos ficam em components, a lógica de gerenciamento de estado global em contexts, as definições de tipagem em types, e a base de dados simulada em data.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Como Executar o Projeto
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Para rodar esta aplicação em um ambiente local, é necessário ter o Node.js instalado. Após clonar o repositório, navegue até a pasta raiz e instale as dependências executando o comando `npm install`. Em seguida, inicie o servidor de desenvolvimento com o comando `npm run dev`. O portfólio estará acessível no navegador através do endereço `http://localhost:3000`.
+
+## Autor
+
+Desenvolvido por Thiago Caputi. Profissional com foco em desenvolvimento back-end, criação de APIs e estruturação de sistemas para internet, aliando conhecimento técnico em tecnologias como JavaScript e integração de banco de dados com metodologias ágeis para a resolução de problemas reais de negócios.
