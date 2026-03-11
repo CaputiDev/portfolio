@@ -14,7 +14,7 @@ export default function Navbar() {
     const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
     return (
-        <nav className="bg-slate-900 dark:bg-black text-white shadow-md sticky top-0 z-50 transition-colors duration-300">
+        <nav className="bg-slate-900 bg-black text-white shadow-md sticky top-0 z-50 transition-colors duration-300">
             <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
                 <div className="flex justify-between h-20 md:h-24 items-center">
 
